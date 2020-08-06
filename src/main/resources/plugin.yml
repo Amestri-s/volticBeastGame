@@ -1,0 +1,5 @@
+name: volticBeastsGame
+main: me.adam.volticbeasts.MainClass
+author: VolticMC
+version: 1.0.0
+api-version: 1.16
