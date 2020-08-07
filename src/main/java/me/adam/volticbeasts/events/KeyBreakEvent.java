@@ -12,12 +12,13 @@ public class KeyBreakEvent implements Listener {
     @EventHandler
     public void blockBreak(BlockBreakEvent event) {
         if (event.getBlock().getType().equals(Material.SPAWNER)) {
-            event.getBlock().setType(Material.REDSTONE_BLOCK);
+            event.getBlock().setType(Material.RED_STAINED_GLASS);
             Bukkit.getServer().broadcastMessage("§m-----------------------------------------------------");
             Bukkit.getServer().broadcastMessage(" ");
             Bukkit.getServer().broadcastMessage("§f" + event.getPlayer().getDisplayName() + " §afound a key!");
             Bukkit.getServer().broadcastMessage(" ");
             Bukkit.getServer().broadcastMessage("§m-----------------------------------------------------");
+            event.setCancelled(true);
             //TODO Add more to the message
             for(Player player : Bukkit.getOnlinePlayers()){
                 player.sendTitle("§f" + event.getPlayer().getDisplayName() + " §afound a key!", "[] keys remain...", 10, 40, 20);
